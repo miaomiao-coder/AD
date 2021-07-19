@@ -1,0 +1,8 @@
+<!-- <view class="{{hasfouritem?'colbooklist':'colbooklist1'}}"> -->
+<view class="colbooklist">
+  <view class="listItem" wx:for="{{colbooklist}}" data-novelid = "{{item.novelid}}" bindtap="toDetail" wx:key="key">
+    <image src="{{item.thumb_cover==''?'/image/defaultcover.png':item.thumb_cover}}"></image>
+    <view class="item-title">{{item.title}}</view>
+  </view>
+</view>
+

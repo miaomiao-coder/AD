@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "简易学习 让我们轻松学习",
+  "usingComponents": { 
+    "ad-component": "/component/adcomponent/index"
+}
+}

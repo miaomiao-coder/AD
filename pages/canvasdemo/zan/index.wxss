@@ -1,0 +1,33 @@
+/* pages/canvasdemo/zan/index.wxss */
+
+page{
+  /* margin-top:200rpx; */
+}
+.love-new {
+  width: 100rpx;
+  height: 100rpx;
+  margin-left:100rpx;
+  /* z-index: 1024; */
+  opacity: 0.8;
+  border-radius: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heart{
+  border: 1px solid #ff3434;
+  box-shadow: 0rpx 0rpx 6rpx #ff3434;
+  color: #ff3434;
+}
+.noheart{
+  border: 1px solid gray;
+  box-shadow: 0rpx 0rpx 6rpx gray;
+  color:gray;
+}
+.like-fx {
+  /* left: 0;
+  top: 200rpx;
+  z-index: 1024; */
+  pointer-events: none;
+}

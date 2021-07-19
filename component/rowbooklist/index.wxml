@@ -1,0 +1,26 @@
+<view class="tab-list-list tab-list-list-flex-item">
+  <view wx:for="{{booklist}}" wx:key="key" class="flex-wrp" data-bid="{{recommend?item.novelid:item.id}}"
+    catchtap="bindNovelDetail">
+    <view class="tab-list-list-item-2 {{ismargin?'item-novel':''}}">
+      <view class="tab-list-list-item-item1-2">
+        <image class="tab-list-list-item-image-2"
+          src="{{item.thumb_cover==''?'/image/defaultcover.png':item.thumb_cover}}"></image>
+      </view>
+      <view class="tab-list-list-item-item2-2">
+        <view class="tab-list-list-item-text-2 text1">{{item.title==''?item.title:item.title}}</view>
+        <view class="tab-list-list-item-text-2 text2">{{item.shortdesc||item.longdesc||item.rec_description}}</view>
+        <view class="content-bottom">
+          <view class="words-state">{{item.shortwordsize}}字 · {{item.updatestatus}}</view>
+          <view class="class-item">{{item.classname}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="adcenter" wx:if="{{index%5==4&&index+1<booklist.length}}">
+    <!-- <ad-component adunitid='{{adidList[(index+1)/5-1]}}'></ad-component> -->
+      <!-- <ad wx:if="{{adidList[(index+1)/5-1].type=='banner'}}" unit-id="{{adidList[(index+1)/5-1].id}}"
+        ></ad>
+      <ad wx:elif="{{adidList[(index+1)/5-1].type=='vedio'}}" unit-id="{{adidList[(index+1)/5-1].id}}" ad-type="video"
+        ad-theme="white"></ad> -->
+    </view>
+  </view>
+</view>

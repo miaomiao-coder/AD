@@ -1,0 +1,8 @@
+<!--pages/canvasdemo/wheel/index.wxml-->
+<!-- <banner-component name="返回"></banner-component> -->
+<pay-component></pay-component>
+<view class="canvas-content">
+
+  <canvas class="canvas-element" canvas-id='turntableCanvas'
+    style='width:{{canvaswidth}}px;height:{{canvasheight}}px;'></canvas>
+</view>

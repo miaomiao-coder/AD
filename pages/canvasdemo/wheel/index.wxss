@@ -1,0 +1,10 @@
+/* pages/canvasdemo/wheel/index.wxss */
+page{
+  display: block;
+  min-height: 100%;  
+  background-color: #EFE7AF;
+  margin-top: 178rpx;
+}
+.canvas-content canvas{
+  position: absolute;
+}

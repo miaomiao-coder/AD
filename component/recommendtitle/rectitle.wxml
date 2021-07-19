@@ -1,0 +1,7 @@
+<view class="main">
+  <text class="left-text">{{title}}</text>
+  <view class="more" data-rectype="{{rectype}}" bindtap="moreOperate"> 
+    <text>{{moreTitle}}</text>
+    <image src="{{moreImgPath}}"></image>
+  </view>
+</view>

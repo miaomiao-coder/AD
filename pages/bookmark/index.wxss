@@ -1,0 +1,292 @@
+/* pages/bookmark/bookmark.wxss */
+
+@import '/component/rowbooklist/index.wxss';
+
+page{
+  background-color: #ffffff;
+}
+.header {
+  width: 750rpx;
+  position: fixed;
+  height: 96rpx;
+  z-index: 2;
+  flex-direction: row;
+  display:flex;
+  padding-left:10rpx;
+  padding-top:23rpx;
+  background-color: #ffffff;
+}
+.search-icon-touch {
+  height: 100%;
+  width: 80rpx;
+  justify-content: center;
+  position: absolute;
+  right: 10rpx;
+}
+.textalgin-center {
+  text-align: center;
+  align-items: center;
+}
+.tab-bar {
+  text-align: center;
+  font-size: 30rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: bold;
+  color: #85909A;
+  line-height: 35rpx;
+}
+.search-column {
+  display: flex;
+  flex-direction: column;
+  height: 53rpx;
+  align-items: center;
+  margin-left:30rpx;
+}
+.bottomline {
+  width: 50rpx;
+  height: 8rx;
+  border-radius: 3rpx;
+  margin-top:10rpx;
+}
+
+.active {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #454C56;
+}
+
+.maincontent {
+  width: 710rpx;
+  /* height: 1600rpx; */
+  margin-top:76rpx;
+  margin-left: 40rpx;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  margin-bottom:20rpx;
+}
+
+
+
+
+.scrollview {
+  /* position: fixed; */
+  top:76rpx;
+  margin-left: 20rpx;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+}
+.scroll-bottom
+{
+  bottom:120rpx;
+}
+.top-view {
+  width: 670rpx;
+  height: 67rpx;
+  position: relative;
+}
+
+.top-view-readhistory{
+  font-size: 30rpx;
+  color: #85909A; 
+  font-weight: bold;
+  display: inline-block;
+  padding-top: 6rpx;
+  margin-left: 50rpx;
+}
+
+.top-view-bookmark {
+  font-size: 36rpx;
+  color: #454C56;
+  font-weight: bold;
+  display: inline-block;
+  padding-top: 6rpx;
+  margin-left: 50rpx;
+}
+.top-view image {
+  width: 50rpx;
+  height: 8rpx;
+  position: absolute;
+  left: 225rpx;
+  top: 55rpx;
+}
+
+
+
+
+.refresh-footer {
+  text-align: center;
+  font-size: 26rpx;
+  line-height: 30rpx;
+  position: relative;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+
+.refresh-footer image{
+  position: absolute;
+  width:30rpx;
+  height:30rpx;
+  top:0;
+  left:50%;
+  margin-left: -95rpx;
+}
+/* 横向排版 */
+.colbooklist{
+  overflow: hidden;
+  display: flex;
+  display: -webkit-flex; /* Safari */
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-bottom: 20rpx;
+}
+.colbooklist  .listItem .title{
+  padding-top:19rpx;
+  font-size: 26rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: bold;
+  color: #454C56;
+  line-height: 26rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+ 
+}
+.listItem .recent {
+  padding-top:13rpx;
+  font-size: 22rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #85909A;
+  line-height: 26rpx;
+  overflow: hidden;
+  lines: 1;
+}
+.novel-item
+{
+  margin-right:45rpx;
+  margin-left:20rpx;
+  margin-top:40rpx;
+}
+.threelist .listItem{
+  width: 180rpx;
+  position: relative;
+}
+.listItemMask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180rpx;
+  height: 240rpx;
+  background: rgba(0, 0, 0, 0.5);
+  color: #000000;
+  border:1rpx solid;
+  border-radius: 6rpx;
+}
+.threelist .listItem:nth-child(3n){
+  margin-right: 0;
+}
+.threelist .listItem .bookimg{
+  display: block;
+  width: 180rpx;
+  height: 240rpx;
+  border-radius: 6rpx;
+}
+
+.list-action-btn {
+  width: 138rpx;
+  height: 64rpx;
+  font-size: 22rpx;
+  background-color: #FFF1E4;
+  color: #FE8503;
+  border-radius: 2rpx;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.bottertitle {
+  position: relative;
+  width: 670rpx;
+  height: 80rpx;
+}
+.bottertitle::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 40rpx;
+  border-bottom: 3rpx dashed #949BAD;
+}
+.bottertitle .title {
+  padding: 0 20rpx;
+  text-align: center;
+  display: inline-block;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  color: #949BAD;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+}
+
+/* 书架编辑按钮 */
+.bookmark-edit-container{
+  flex-direction: row; 
+  position: fixed;
+  bottom: 0;
+  height:120rpx;
+  /* display: flex; */
+  background: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  justify-content: space-between;
+  width:750rpx;
+  border-top: 2rpx solid rgba(233, 233, 233, 1);
+}
+.bookmark-edit-btn-orange{
+  background-color: #FE8503;
+  width: 310rpx;
+  height:78rpx;
+  line-height: 78rpx;
+  color: #FFFFFF;
+  font-family: Noto Sans S Chinese;
+}
+.bookmark-edit-btn-gray{
+  background-color: #949BAD;
+  width: 310rpx;
+  height:78rpx;
+  line-height: 78rpx;
+  color: #FFFFFF;
+  font-family: Noto Sans S Chinese;
+}
+
+
+.noReadHistoryText {
+  text-align: center;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  width: 670rpx;
+  font-size: 26rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #949BAD;
+}
+.checkedimg {
+  width: 44rpx;
+  height: 44rpx;
+  display: absolute;
+  margin-top: 184rpx;
+  margin-left: 124rpx;
+}

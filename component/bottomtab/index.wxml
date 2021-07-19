@@ -1,0 +1,7 @@
+<!--component/bottomtab/index.wxml-->
+<cover-view class="tab-bar">
+    <cover-view class="tab-bar-border"></cover-view>
+    <cover-view  wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-url="{{item.pagePath}}" data-index="{{index}}"  bindtap="switchTab">
+      <cover-view class="title {{selected=== index ? 'choose' : 'nochoose'}} ">{{item.text}}</cover-view>
+    </cover-view>
+  </cover-view>

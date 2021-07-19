@@ -1,0 +1,6 @@
+<!--component/adcomponent/index.wxml-->
+<view class="adContainer" wx:if="{{show&&adunitid&&adunitid.id!=''}}">
+<ad wx:if="{{adunitid.type=='banner'}}" unit-id="{{adunitid.id}}"></ad>
+<ad wx:elif="{{adunitid.type=='vedio'}}" unit-id="{{adunitid.id}}" ad-type="video" ad-theme="white"></ad>
+<ad-custom  wx:else  unit-id="{{adunitid.id}}" ad-intervals="30"  bindhide="adHide"></ad-custom>
+</view>

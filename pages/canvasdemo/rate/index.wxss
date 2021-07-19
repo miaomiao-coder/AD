@@ -1,0 +1,30 @@
+/* pages/canvasdemo/rate/index.wxss */
+page{
+  /* margin-top: 178rpx; */
+}
+.progress_bg
+{
+  width:240rpx;
+  height: 240rpx;
+}
+.progress_canvas {
+  width:240rpx;
+  height: 240rpx;
+  position: absolute;
+}
+.center{
+ position: relative;
+}
+.progress_info
+{
+  font-size: 24rpx;
+  font-family: SourceHanSansCN-Normal;
+  font-weight: 400;
+  color: rgba(255, 92, 77, 1);
+  line-height: 32rpx;
+  text-align: center;
+  position: absolute;
+  white-space: pre-line;
+  top:90rpx;
+  left:90rpx;
+}

@@ -1,0 +1,64 @@
+
+<!--搜索首页-->
+<view class="page" wx:if="{{!loading}}">
+  <view class="search-area">
+    <form bindsubmit="submitEvent" class="form">
+      <input focus="{{true}}" class="search-txt" name="keyword" placeholder="{{keyword==''?'书名、作者、关键词':''}}" placeholder-style="placeholder" value="{{keyword}}" bindinput="inputEvent" confirm-type="search"/>
+      <button class="search-btn" form-type="submit" hover-class="btn-hover" bindconfirm="confirmEvent" bindblur="blurEvent">搜索</button>
+    </form>
+        
+    <image src="/image/selecticon.png" class="search-icon1"></image>
+    <view class="icon-container" bindtap="clearWordsEvent">
+      <image src="/image/close.png" class="search-icon2" wx:if="{{showClearIcon}}" ></image>
+    </view>
+  </view>
+
+  <view class="search-keyword" wx:if="{{!showResult && keyword ==''}}">
+    <view class="search-keyword-title ">
+      大家都在搜    
+    </view>
+    <view style="background:{{randomColorArr[idx]}}"  wx:for="{{hotKeyword}}" wx:for-item="hotKeywordItem" class="search-keyword-item hot-search " data-keyword="{{hotKeywordItem.name}}" catchtap="searchEvent" wx:for-index="idx">
+      {{hotKeywordItem.name}}
+    </view>
+   <view style="width:750rpx;height:18rpx;background:#F7F7F7;margin-top:50rpx"></view>
+    <view class="search-keyword-title">
+      历史记录 
+      <navigator url="" class="search-keyword-action" hover-class="action-hover" catchtap="deleteEvent">
+        <image src="../../../../image/trash.png" class="search-keyword-icon"></image>
+        <view class="search-keyword-cleartext">清空</view>
+      </navigator>
+      
+    </view>
+   
+    <view wx:for="{{historyWord}}" wx:for-item="historyWordItem" class="search-keyword-item" data-keyword="{{historyWordItem}}" catchtap="searchEvent">{{historyWordItem}}</view>
+  </view>
+
+
+  <!--书库列表-->
+    <scroll-view scroll-y="true" class="list-container"   bindscrolltolower="scrolltolowerEvent" scroll-top="{{toTop==true?0:''}}"  animation="{{slideAnimation}}" wx:if="{{showResult && keyword!=''}}" bindtap="emptyEvent">
+      <view class="search-total-count-title">
+        共<text class="search-total-count">{{resultCount}}</text>条所搜结果
+      </view>
+      <view style="margin-left:40rpx;">
+        <book-component booklist="{{bookList}}"></book-component>
+      </view>
+      <view class="refresh-footer" wx:if="{{resultPagecount>0 && resultPageIndex-1< resultPagecount&&!showLoading}}">
+      </view>
+      <view class="refresh-footer" wx:if="{{resultPagecount>0 && resultPageIndex-1< resultPagecount&&showLoading}}">
+        <image src="/image/loading.gif"></image>正在加载···
+      </view>
+      <view wx:if="{{noMoreData}}" class="search-no-data-text">没有更多数据了</view>
+    </scroll-view>
+    <navigator url="" class="toTop" hover-class="toTop-hover" wx:if="{{resultPagecount>4}}">
+      <image src="../../../../image/toTop.png" class="toTopImage" catchtap="toTopEvent"></image>
+    </navigator>
+
+  <view  wx:if="{{!showResult && keyword!=''}}"  class="search-no-data">
+  <view></view>
+      <!-- <image  style="width: 172rpx; height: 184rpx;" src="/image/search_nodata2.png"></image>    -->
+  </view>
+
+</view>
+<view wx:else>
+  <canvas style="width: 300px; height: 200px;" canvas-id="canvasid"></canvas>
+  </view>

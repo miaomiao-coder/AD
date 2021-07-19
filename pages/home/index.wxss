@@ -1,0 +1,206 @@
+
+view input {
+  box-sizing: border-box;
+}
+.main {
+  /* width: 750rpx; */
+  /* height: 1600rpx; */
+  padding-top: 100rpx;
+  /* padding-left: 40rpx; */
+  /* padding-right: 40rpx; */
+  background-color: #FFFFFF;
+}
+.top-view {
+  width: 670rpx;
+  height: 100rpx;
+  position: fixed;
+  top: 0;
+  left: 40rpx;
+  z-index: 1000;
+  background-color: #FFFFFF;
+}
+.top-view-left {
+  width: 270rpx;
+  height: 67rpx;
+  position: relative;
+  top: 17rpx;
+}
+.top-view-right {
+  width: 400rpx;
+  height: 67rpx;
+  position: absolute;
+  right: 0;
+  top: 17rpx;
+}
+
+/* 男女生tab */
+.top-view-female {
+  font-size: 30rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: bold;
+  color: #85909A;
+  display: inline-block;
+  padding-top: 11rpx;
+}
+.top-view-female-sel {
+  font-size: 36rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: bold;
+  color: #FE8503;
+  display: inline-block;
+  padding-top: 6rpx;
+}
+.top-view-male {
+  font-size: 30rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: bold;
+  color: #85909A;
+  display: inline-block;
+  margin-left: 50rpx;
+  padding-top: 11rpx;
+}
+.top-view-male-sel {
+  font-size: 36rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: bold;
+  color: #FE8503;
+  display: inline-block;
+  padding-top: 6rpx;
+  margin-left: 50rpx;
+}
+.top-view-left .female {
+  width: 50rpx;
+  height: 8rpx;
+  position: absolute;
+  left: 10rpx;
+  top: 55rpx;
+}
+.top-view-left .male {
+  width: 50rpx;
+  height: 8rpx;
+  position: absolute;
+  left: 118rpx;
+  top: 55rpx;
+}
+
+/* 搜索框 */
+.top-view-right image {
+  width: 30rpx;
+  height: 32rpx;
+  position: absolute;
+  left: 35rpx;
+  top: 18rpx;
+}
+.top-view-right .search-input {
+  width: 400rpx;
+  height: 67rpx;
+  background-color: #F3F3F3;
+  border-radius: 34rpx;
+  font-size: 26rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #85909A;
+  padding-left: 81rpx;
+  line-height: 67rpx;
+}
+
+/* 搜索下面的大图 */
+.swiper-content
+{
+  border-radius: 10rpx;
+}
+.index-cover {
+  width: 670rpx;
+  height: 288rpx;
+  /* margin-top: 16rpx; */
+  margin-bottom: 50rpx;
+}
+.index-cover image {
+  width: 670rpx;
+  height: 288rpx;
+  border-radius: 10rpx;
+}
+
+/* 今日热书 */
+.hot-novel {
+  width: 670rpx;
+  margin-bottom: 34rpx;
+}
+
+/* 热门分类 */
+.hot-class {
+  margin-bottom: 74rpx;
+}
+
+/* 重磅新书 */
+.new-book {
+  margin-bottom: 34rpx;
+}
+
+/* 热门推荐 */
+.hot-recommend {
+  margin-bottom: 74rpx;
+}
+
+/* 口碑佳作 */
+.good-novel {
+  margin-bottom: 34rpx;
+}
+
+/* 经典热书 */
+.classics-hot-novel {
+  margin-bottom: 34rpx;
+}
+
+/* 必看言情 */
+.romantic-novel {
+  margin-bottom: 184rpx;
+}
+
+/* 猜你喜欢 */
+
+/* 等待部分 */
+.main .loading {
+  width: auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin-left: -40rpx;
+}
+.main .loading image {
+  width: 23rpx;
+  height: 23rpx;
+}
+.main .loading text {
+  font-size: 26rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #949BAD;
+  margin-left: 10rpx;
+}
+.scrollList {
+  /* height: 1360rpx; */
+  /* padding-left: 40rpx; */
+  position: fixed;
+  top: 100rpx;
+  bottom: 0;
+  left: 0;
+  background-color: #FFFFFF;
+  padding-left: 40rpx;
+}
+
+.adContainer{
+position: fixed;
+margin-left: 20rpx;
+bottom: 100rpx;
+}
+.content
+{
+  padding:20rpx 20rpx 20rpx 20rpx
+}
+.desc {
+  font-size: 30rpx;
+  line-height: 42rpx;
+  color: #353535;
+  margin-top: 20rpx;
+}

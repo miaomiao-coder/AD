@@ -1,0 +1,70 @@
+/* pages/canvas/index.wxss */
+
+.active-vedio
+{
+  display: inline-block;
+  padding: 14rpx 29rpx;
+  border: 1px solid #e4e4e4;
+  border-radius: 45rpx;
+  margin: 19rpx 15rpx 0;
+  color: #454C56;
+  font-size: 30rpx;
+  background-color: #F3F4F8;
+  top:50rpx;
+}
+.rule-desp {
+  display: flex;
+  justify-content: center;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+}
+
+.rule-detail {
+  margin-top: 29rpx;
+  width: 691rpx;
+  /* height: 382rpx; */
+  background: #F3F4F8;
+  border-radius: 10rpx;
+  padding-left: 30rpx;
+  font-family: Noto Sans S Chinese;
+  color: #343436;
+  line-height: 46rpx;
+  padding-bottom: 50rpx;
+}
+
+.rule-detail .title {
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  margin-top: 40rpx;
+  text-align: center;
+}
+
+.rule-detail .rule-item {
+  width: 620rpx;
+  font-size: 26rpx;
+  margin-bottom: 10rpx;
+}
+.top-title
+{
+  background-color: #FE8503;
+  width:100%;
+  height:178rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 40rpx;
+  color:#ffffff;
+  font-family:PingFangSC-Medium;
+  margin-bottom: 40rpx;
+}
+.bigword
+{
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.smallword
+{
+  font-size: 22rpx;
+  font-weight: 400;
+  margin-left: 20rpx;
+}

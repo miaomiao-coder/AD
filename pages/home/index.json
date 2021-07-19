@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "book-row": "../../component/rowbooklist/index",
+    "rec-title": "../../component/recommendtitle/rectitle",
+    "book-col": "../../component/colbooklist/index",
+    "class-row": "../../component/rowclasslist/index",
+    "ad-component": "../../component/adcomponent/index",
+    "tab-component": "../../component/bottomtab/index"
+  }
+}

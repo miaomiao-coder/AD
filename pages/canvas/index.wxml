@@ -1,0 +1,22 @@
+<!--pages/canvas/index.wxml-->
+<!-- <view class="top-title">
+  <view class="bigword">简易学习</view>
+  <view class="smallword">让我们轻松学习</view>
+</view> -->
+
+<view>
+  <view wx:for="{{dataList}}" wx:key="key" data-url="{{item.url}}" bindtap="ToPage" class="active-vedio"
+    style="background-color:{{item.color}}">{{item.name}}</view>
+</view>
+<view>
+  <view wx:for="{{specialList}}" wx:key="key" data-url="{{item.url}}" bindtap="ToPage" class="active-vedio"
+    style="background-color:{{item.color}}">{{item.name}}</view>
+</view>
+<view class="rule-desp">
+  <view class="rule-detail">
+    <view class="title">扣除{{unitName}}规则说明</view>
+    <view class="rule-item">1. {{unitName}}来源大转盘抽奖</view>
+    <view class="rule-item">2. 非活动期间每次浏览效果自动扣除5{{unitName}}</view>
+    <view class="rule-item">3. 今日可免费浏览特效</view>
+  </view>
+</view>

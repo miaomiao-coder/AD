@@ -1,0 +1,32 @@
+/* component/bannercomponent/index.wxss */
+.banner
+{
+  width:750rpx;
+  height: 178rpx;
+  background-color: #FFFFFF;
+  display: flex;
+  padding-top: 80rpx;
+  position: fixed;
+  top:0;
+}
+.back .title
+{
+  font-size: 30rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #343436;
+  line-height: 30rpx;
+  padding-left: 20rpx;
+}
+.back{
+  /* width:57rpx; */
+  /* height: 30rpx; */
+  /* text-align: center; */
+  padding-left: 40rpx;
+  display: flex;
+  align-items: center;
+}
+.back image{
+  width:15rpx;
+  height: 28rpx;
+}

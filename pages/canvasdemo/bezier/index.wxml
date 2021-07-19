@@ -1,0 +1,9 @@
+<!--pages/canvasdemo/bezier/index.wxml-->
+<!-- <banner-component name="返回"></banner-component> -->
+<pay-component></pay-component>
+<canvas wx:for="{{bezierCount-0}}" wx:key="key" class="heart-center" canvas-id="bezier{{index}}"
+  style="width:{{width}}px;height:{{height}}px;"></canvas>
+<view class="love-new heart" bindtap="bubbleAnimate" style="margin-left:325rpx;margin-top:{{margintop}}px">
+  <view class="" style="font-size:{{heartsize}}rpx;color:{{heartcolor}}">❤</view>
+  <!-- 这个爱心自己换上字体或者图片爱心 -->
+</view>

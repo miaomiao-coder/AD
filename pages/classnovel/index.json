@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "book-component": "../../component/rowbooklist/index",
+    "tab-component": "../../component/bottomtab/index"
+  }
+}

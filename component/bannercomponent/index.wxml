@@ -1,0 +1,7 @@
+<!--component/bannercomponent/index.wxml-->
+<view class="banner">
+  <view class="back" catchtap="toBack">
+    <image src="/image/prev-icon.png"></image>
+    <view class="title">{{name}}</view>
+  </view>
+</view>

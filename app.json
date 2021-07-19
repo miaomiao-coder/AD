@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/lotteryLog/index",
+    "pages/canvas/index",
+    "pages/canvasdemo/time/index",
+    "pages/canvasdemo/rate/index",
+    "pages/canvasdemo/playbill/index",
+    "pages/canvasdemo/ball/index",
+    "pages/canvasdemo/wheel/index",
+    "pages/canvasdemo/graphics/index",
+    "pages/canvasdemo/bezier/index",
+    "pages/canvasdemo/zan/index",
+    "pages/special/leftsider/index",
+    "pages/canvasdemo/rain/index",
+    "pages/canvasdemo/stars/index",
+    "pages/contact/index",
+    "pages/canvasdemo/auto/index",
+    "pages/canvasdemo/static/index",
+    "pages/canvasdemo/trans/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#ffffff",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "custom": false,
+    "borderStyle": "white",
+    "selectedColor": "#FE8503",
+    "color": "#949BAD",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "大转盘",
+        "iconPath": "image/bookshelf.png",
+        "selectedIconPath": "image/bookshelf_hl.png"
+      },
+      {
+        "pagePath": "pages/canvas/index",
+        "text": "画布",
+        "iconPath": "image/booklist.png",
+        "selectedIconPath": "image/booklist_hl.png"
+      },
+      {
+        "pagePath": "pages/contact/index",
+        "text": "联系我们",
+        "iconPath": "image/contactus.png",
+        "selectedIconPath": "image/contactus_hl.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 60000,
+    "connectSocket": 60000,
+    "uploadFile": 60000,
+    "downloadFile": 30000
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
+}

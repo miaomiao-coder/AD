@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText": "领取记录",
+  "usingComponents": { "ad-component": "/component/adcomponent/index",
+    "banner-component": "/component/bannercomponent/index"}
+}

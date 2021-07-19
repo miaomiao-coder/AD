@@ -1,0 +1,158 @@
+/* pages/classnovel/index.wxss */
+page {
+  background-color: #ffffff;
+}
+
+.pages {
+  background: #ffffff;
+}
+
+.cate-header {
+  margin-bottom: 46rpx;
+}
+
+.tostop {
+  position: fixed;
+  top: 0;
+  z-index: 10rpx;
+  background: #ffffff;
+}
+
+.cate-container {
+  width: 710rpx;
+  margin: 25rpx 0 8rpx 40rpx;
+}
+
+.cate-item {
+  height: 66rpx;
+  background: #EAEAEA;
+  border: 2rpx solid rgba(234, 234, 234, 0.5);
+  border-radius: 4rpx;
+  font-size: 30rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #454C56;
+  line-height: 66rpx;
+  display: inline-block;
+  width: 151rpx;
+  margin-top: 24rpx;
+  margin-right: 20rpx;
+}
+
+.textcenter {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.classselect {
+  background: #FFF1E4;
+  border-radius: 4rpx;
+  color: #FE8503;
+}
+
+.cate-more {
+  width: 750rpx;
+  height: 54rpx;
+  flex-flow: column;
+  justify-content: center;
+  flex-direction: row;
+  display: flex;
+  margin-top: 20rpx;
+  align-items: center;
+}
+
+.more-txt {
+  font-size: 30rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #565C64;
+  line-height: 46rpx;
+}
+
+.cate-more image {
+  width: 23rpx;
+  height: 23rpx;
+  margin-left: 11rpx;
+}
+
+.book-container {
+  position: fixed;
+  top: 0;
+  bottom:110rpx;
+  width: 100%;
+  background: #ffffff;
+}
+
+/* margin-top:66rpx; */
+/* margin-bottom: 40rpx; */
+/* } */
+.refresh-footer {
+  text-align: center;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: Center;
+  height: 77rpx;
+}
+
+.nomore {
+  color: #949BAD;
+  font-size: 26rpx;
+}
+
+.refresh-footer text {
+  line-height: 32rpx;
+  font-size: 26rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #949BAD;
+  margin-left: 8rpx;
+}
+
+.refresh-footer image {
+  width: 23rpx;
+  height: 23rpx;
+}
+
+.toTop {
+  position: fixed;
+  bottom: 150rpx;
+  right: 20rpx;
+  height: 110rpx;
+  width: 110rpx;
+  border: 0rpx solid #fff;
+  background: #fff;
+  border-radius: 55rpx;
+  opacity: 0.6;
+  z-index: 99;
+}
+
+.toTopImage {
+  height: 110rpx;
+  width: 110rpx;
+}
+/*  加载更多   */
+.weui-loading {
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-animation: weuiLoading 1s steps(12, end) infinite;
+  animation: weuiLoading 1s steps(12, end) infinite;
+  background: #ffffff;
+  background-size: 100%;
+}
+.weui-loadmore {
+  width: 65%;
+  margin: 1.5em auto;
+  line-height: 1.6em;
+  font-size: 14px;
+  text-align: center;
+}
+.weui-loadmore__tips {
+  display: inline-block;
+  vertical-align: middle;
+}

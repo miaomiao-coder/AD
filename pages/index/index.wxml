@@ -1,0 +1,80 @@
+<!--pages/index/index.wxml-->
+
+<image class="bgimg" src="/image/bg.png"></image>
+<view class="center bgimg">
+  <view class="top-user">
+    <view class="left-user">
+      <!-- <image class="user-icon" src="{{sysLoginInfo.icon||'/image/auth.png'}}" bindtap="toAuth"></image> -->
+      <view class="user-desp">
+        <view>ID：{{sysLoginInfo.username}}</view>
+        <view style="margin-top:15rpx">{{unitName}}：{{userfee}}</view>
+      </view>
+    </view>
+    <image class="log-icon" src="/image/goldlog.png" bindtap="toLog"></image>
+  </view>
+  <view class="tips">当前剩余抽奖机会 <label>{{3-hasNum}}</label> 次，稍后再来新增 3 次机会</view>
+  <view class="turn-center">
+    <view class="plate-wrap" animation="{{animation}}" bindtransitionend='animationend'>
+      <view class="plate-box" wx:for="{{ lottery }}" wx:key="key"
+        style="transform-origin: 50% {{ ciclewidth/2}}rpx;border-top: {{ciclewidth/2 }}rpx solid #{{ index % 2==0?'efd691 ':'ffffff' }};transform:translate(-50%,0) rotate({{ 360 / lottery.length * ( index )}}deg);border-left: {{ leftwidth }}rpx solid transparent;border-right: {{ leftwidth }}rpx solid transparent;">
+        <text class="text-box">{{ item.content }}{{unitName}}</text>
+        <image class="img-box" src="{{item.icon||'/image/biggold.png'}}"></image>
+      </view>
+    </view>
+    <!-- <view class="reward-content" animation="{{animation}}">
+      <image class="bigwheel" src="/image/turn.png"></image>
+      <view wx:for="{{lottery}}" wx:key="key" class="reward-item bgcolor{{index}}"
+        style="transform: rotate({{30+index*60}}deg) skewY(-30deg);">
+        <view class="text-box">
+        <view >{{item.name}}</view>
+        <image src="{{item.img}}"></image>
+      </view>
+      </view>
+    </view> -->
+    <image class="btn-turn" src="/image/start.png" bindtap="rotate"></image>
+  </view>
+  <!-- <image class="btn-read" src="/image/contineread.png" bindtap="ContinueRead" /> -->
+  <view class="horn-item">
+    <image src="/image/horn.png"></image>
+    <swiper class="horn-content" vertical="true" autoplay="true" circular="true" interval="4000" duration="2000">
+      <block wx:for="{{msgList}}" wx:key="key">
+        <swiper-item>
+          <view style="padding-top: 20rpx; ">恭喜用户******抽中 <label>{{item}} {{unitName}}</label></view>
+        </swiper-item>
+      </block>
+    </swiper>
+
+  </view>
+</view>
+<!-- <ad-component adunitid='{{unitBottomid}}'></ad-component> -->
+<view class="rule-desp">
+  <view class="rule-detail">
+    <view class="title">玩法说明</view>
+    <view class="rule-item">1. 用户参与抽奖获得{{unitName}}</view>
+    <view class="rule-item">2. {{unitName}}可用于查询特效，下载资料</view>
+    <!-- <view class="rule-item">2. 您需从公众号如旧进入小程序，书币才能自动到账 公众号，如从公众号进入小程序依然未能到账，可尝</view> -->
+  </view>
+</view>
+<view class="prop" wx:if="{{propShow}}" bindtap="CloseProp">
+  <view class="prop-content">
+    <view wx:if="{{!isbtn}}">
+      <image class="point-icon" src="/image/back-icon.png"></image>
+      <view class="yellow">抽奖次数暂时用完</view>
+      <view class="yellow">请先返回阅读，一会儿再来抽奖吧</view>
+    </view>
+    <view style="margin-top:70rpx;margin-bottom:46rpx">如何返回继续阅读</view>
+    <view style="margin-top: 36rpx;">1. 可以直接关闭小程序，即可返回原小程序 </view>
+    <view style="margin-top: 36rpx;">2. 或返回微信主页，找到小程序入口搜索小程序</view>
+  </view>
+</view>
+<view class="prop reward" wx:if="{{rewardShow}}">
+  <view class="prop-center">
+    <image class="reward-tip" src="/image/reward-icon.png"></image>
+    <view class="reward-up">
+      <view class="choosetitle">抽中<label> {{choosedReward.content}}</label> {{unitName}}</view>
+      <!-- <view class="btn-reward" bindtap="RewardAd">看视频 免费领取</view> -->
+      <view class="btn-reward" bindtap="AddGold">点击确认 免费领取</view>
+    </view>
+  </view>
+  <image class="close-icon" src="/image/close-icon.png" bindtap="CloseProp"></image>
+</view>

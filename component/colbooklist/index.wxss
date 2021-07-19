@@ -1,0 +1,44 @@
+/* 横向排版 */
+.colbooklist {
+  overflow: hidden;
+  display: flex;
+  display: -webkit-flex;  /* Safari */
+  flex-direction: row;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+}
+.colbooklist1 {
+  overflow: hidden;
+  display: flex;
+  display: -webkit-flex;  /* Safari */
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.colbooklist .listItem{
+  width: 138rpx;
+  margin:0 38rpx 40rpx 0;
+}
+.colbooklist .listItem:nth-child(4n) {
+  margin-right: 0;
+}
+.colbooklist .listItem image {
+  display: block;
+  width: 138rpx;
+  height: 180rpx;
+  border-radius: 6rpx;
+}
+.colbooklist .listItem .item-title{
+  font-size: 23rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #454C56;
+  line-height: 36rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 19rpx;
+}

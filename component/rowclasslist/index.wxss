@@ -1,0 +1,32 @@
+.class-content {
+  overflow: hidden;
+  display: flex;
+  display: -webkit-flex;  /* Safari */
+  flex-direction: row;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+}
+.class-content .class-item {
+  height: 58rpx;
+  margin-right: 19rpx;
+  margin-bottom: 15rpx;
+  border-radius: 30rpx;
+  line-height: 58rpx;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+}
+.class-content .class-item image {
+  width: 25rpx;
+  height: 31rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.class-content .class-item text {
+  display: inline-block;
+  font-size: 30rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #454C56;
+  vertical-align: middle;
+  margin-left: 10rpx;
+}

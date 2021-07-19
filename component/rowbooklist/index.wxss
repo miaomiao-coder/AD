@@ -1,0 +1,136 @@
+/* .tab-list-list {
+  margin-bottom: 40rpx;
+} */
+.tab-list-list-item2 {
+  width: 690rpx;
+  color: #666;
+  text-align: center;
+}
+
+.tab-list-list-item-flow-2 {
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+}
+.item-novel
+{
+  margin-left:40rpx;
+}
+.adcenter
+{
+  margin-top:20rpx;
+}
+.tab-list-list-item-2 {
+  width: 670rpx;
+  height: 242rpx;
+  flex-flow: row nowrap;
+  justify-content:flex-start;
+  margin-top: 40rpx;
+  display: flex;
+  /* margin-left:40rpx; */
+}
+
+.tab-list-list-item-2 .icon {
+  color: black;
+  text-align: left;
+  width: 40rpx;
+  height: 37rpx;
+  z-index: 9;
+}
+
+/* .tab-list-list-item-item1-2 {
+  width: 151rpx;
+} */
+
+.tab-list-list-item-item2-2 {
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 20rpx;
+  position: relative;
+  height:240rpx;
+}
+
+.tab-list-list-item-image-2 {
+  width: 180rpx;
+  height: 240rpx;
+  border-radius: 6rpx;
+}
+
+.tab-list-list-item-item2-2 .tab-list-list-item-text-2 {
+  color: black;
+  display: flex;
+  text-align: left;
+}
+
+.tab-list-list-item-item2-2 .text1 {
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: bold;
+  color: #454C56;
+}
+
+.tab-list-list-item-item2-2 .text2 {
+  font-size: 26rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #85909A;
+  line-height: 36rpx;
+  display: inline-block;
+  margin-top: 25rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.tab-list-list-item-item2-2 .text3 {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: #888;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.content-bottom
+{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 15rpx;
+  width:460rpx;
+}
+.content-bottom .words-state {
+  font-size: 22rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #85909A;
+  line-height: 29rpx;
+}
+
+.content-bottom .class-item {
+  /* width: 54rpx; */
+  padding-right:10rpx;
+  padding-left:10rpx;
+  height: 29rpx;
+  border: 2rpx solid #C0C5C9;
+  border-radius: 6rpx;
+  font-size: 19rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #8F969C;
+  line-height: 29rpx;
+  display: flex;
+}
+.textcenter{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

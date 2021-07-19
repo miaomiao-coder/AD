@@ -1,0 +1,33 @@
+<!--pages/classnovel/index.wxml-->
+<view class="pages" wx:if="{{!loading}}">
+  <scroll-view scroll-y="true" class="book-container" bindscrolltolower="scrolltolowerEvent"
+    scroll-top="{{toTop==true?0:''}}">
+    <view class="cate-header">
+    <view class="cate-container">
+      <view wx:for="{{classList}}" wx:key="key" class="cate-item textcenter {{item.id==selectedId?'classselect':''}}"
+        wx:if="{{showMore||(showMore==false&&index<8)}}" data-cateid="{{item.id}}" bindtap="ChangeCate">
+        {{item.name}}
+      </view>
+    </view>
+    <view class="cate-more " wx:if="{{classList.length>8&&!showMore}}" bindtap="More">
+      <view class="more-txt">查看更多</view>
+      <!-- <image src="/image/more-iocn.png"></image> -->
+    </view>
+  </view>
+
+    <view style="margin-bottom:10rpx;">
+      <book-component booklist="{{bookList}}" adidList="{{showAdList}}" ismargin="{{true}}"></book-component>
+    </view>
+    <view class="refresh-footer nomore" wx:if="{{pageIndex>0 && pageIndex-1>= pageCount&&!showLoading}}">
+      没有更多数据了
+    </view>
+    <view class="refresh-footer" wx:if="{{pageCount>0 && pageIndex-1< pageCount&&showLoading}}">
+      <image src="/image/loading.gif"></image>
+      <text>正在加载</text>
+    </view>
+  </scroll-view>
+  <view class="toTop" hover-class="toTop-hover" wx:if="{{totalCount>4&&toTop!=true&&pageIndex>2}}">
+    <image src="/image/toTop.png" class="toTopImage" catchtap="toTopEvent"></image>
+  </view>
+  <tab-component selected="2"></tab-component>
+</view>

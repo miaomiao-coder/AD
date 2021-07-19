@@ -1,0 +1,3 @@
+{
+  "usingComponents": {"banner-component": "/component/bannercomponent/index","pay-component": "/component/paycomponent/index"}
+}

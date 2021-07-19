@@ -1,0 +1,150 @@
+<!--pages/book/chapter/detail/detail.wxml-->
+<view class="a_content"  wx:if="{{!loading}}">
+  <scroll-view scroll-y="true" scroll-top="{{toTop}}"
+    class="page-content {{setItem.night==true?'content-night':'content'}}"
+    style="background: {{setItem.night==true?'':setItem.contentbg}};" bindtouchstart="oTs" bindtouchend="oTe"
+    bindtap="taggleSite">
+    <view class="top-setting">
+      <view class="left {{setItem.night == true?'night':'day'}}">
+        <view class="fontsize setborderleft " catchtap="mimusContentSize">字小</view>
+        <view class="line"></view>
+        <view class="fontsize setborderright " catchtap="addContentSize">字大</view>
+      </view>
+      <view class="right">
+        <view class="fontsize setborder {{setItem.night == true?'font-night':'font-day'}}" catchtap="siteShow">设置</view>
+        <view class="fontsize setborder {{setItem.night == true?'font-night':'font-day'}}" catchtap="siteNight">
+          {{setItem.night == true?'开灯':'关灯'}}</view>
+      </view>
+    </view>
+    <!--章节内容-->
+    <view class="{{setItem.night==true?'content-night':content}} content-item "
+      style="background: {{setItem.night==true?'':setItem.contentbg}}">
+      <!-- <ad-component adunitid='{{unitCenterid[0]}}' wx:if="{{!orderShow&&!orderNovelShow}}"></ad-component> -->
+      <!-- <view class="content-center">
+          <text
+            style="line-height: {{setItem.spacing}}%;font-size: {{setItem.contentSize}}rpx">{{chapterDetail.content}}</text>
+        </view> -->
+        <view class="userfee-item">
+        <view class="right-item">
+          <image src="/image/gold_icon.png"></image>
+          <view class="last-fee">{{fee_name}}余额: {{userFee}}</view>
+        </view>
+      </view>
+      <view wx:for="{{chapterDetail.content}}" wx:key="key">
+   
+        <view class="content-center">
+          <text
+            style="line-height: {{setItem.spacing}}%;font-size: {{setItem.contentSize}}rpx">{{item.paragraph}}</text>
+        </view>
+        <!-- <ad-component wx:if="{{index<(unitCenterid.length-2)}}"
+          adunitid='{{unitCenterid[index+2]}}'></ad-component> -->
+      </view>
+      <!-- <ad-component adunitid='{{unitCenterid[1]}}' wx:if="{{!orderShow&&!orderNovelShow}}"></ad-component> -->
+      <!--跳章-->
+      <view class="{{chapterShow==false?'hide':''}} bottomchapter">
+        <view wx:if="{{rangeInfo.max_chaptercode == chapterCode}}">
+          <view class="item-btn-2 {{setItem.night == true?'night':'day'}}" catchtap="toNext" disabled="true">最后一章</view>
+        </view>
+        <view wx:else>
+          <view class="item-btn-2 {{setItem.night == true?'night':'day'}}" catchtap="toNext">下一章</view>
+        </view>
+      </view>
+    </view>
+
+    <!--单章订购-->
+    <view wx:if="{{novelInfo.feetype=='chapter' || novelInfo.feetype=='novelchapter'}}"
+      class="{{!orderShow?'hide':''}}">
+      <view class="order">
+        <view class="chapter-price">
+        <label>本章节需</label><text class="{{setItem.night == true?'wordnight':'day'}}">{{chapterDetail.fee}}{{fee_name}}</text><label>解锁，账户余额:</label> <text class="{{setItem.night == true?'wordnight':'day'}}">{{userFee}}{{fee_name}}</text></view>
+        <!-- <view class="chapter-lock {{setItem.night == true?'night':'day'}}" catchtap="OpenBigWheel">点击抽{{fee_name}}，免费解锁</view>
+        <view class="chapter-lock {{setItem.night == true?'night':'day'}}" catchtap="OpenVip">
+          看视频免费解锁{{chapterDetail.unlockchaptercount}}章</view> -->
+          <view class="chapter-lock {{setItem.night == true?'night':'day'}}" catchtap="OpenVip">
+         玩转大转盘，抽取{{fee_name}}</view>
+          <view class="chapter-lock {{setItem.night == true?'night':'day'}}" catchtap="FreeChapter">点击解锁{{chapterDetail.unlockchaptercount}}章</view>
+      </view>
+      <!-- <ad-component adunitid='{{unitBottomid}}'></ad-component> -->
+    </view>
+
+    <!--全本订购-->
+    <view wx:if="{{novelInfo.feetype=='novel' || novelInfo.feetype=='novelchapter'}}"
+      class="{{!orderNovelShow ? 'hide':''}}">
+      <view class="order-novel">
+        <view class="chapter-lock {{setItem.night == true?'night':'day'}}" catchtap="OpenVip">看视频免费解锁{{chapterDetail.unlockchaptercount}}章</view>
+      </view>
+      <!-- <ad-component adunitid='{{unitBottomid}}'></ad-component> -->
+    </view>
+  
+
+  </scroll-view>
+
+
+  <!--设置-->
+  <view class="content-setting slidup {{setItem.night ==true ?'settingnight':'settingday'}} {{site==true?'':'hide'}}">
+    <view class="content-setting-list">
+      <view class="content-setting-item">
+        <view wx:if="{{rangeInfo.min_chaptercode == chapterCode}}" class="chapter-btn item-color" catchtap="toPre">第一章
+        </view>
+        <view wx:else class="chapter-btn item-color" catchtap="toPre">上一章</view>
+        <view class="chapter-btn item-color" catchtap="toChapterList">目录</view>
+        <view wx:if="{{rangeInfo.max_chaptercode == chapterCode}}" class="chapter-btn item-color">最后一章</view>
+        <view wx:else class="chapter-btn item-color" catchtap="toNext">下一章</view>
+      </view>
+    </view>
+    <view class="content-setting-list">
+      <view class="content-setting-item bgset">
+        <text class="content-setting-text">背景</text>
+        <label class="content-bg {{item.value==setItem.contentbg?'item-check':''}}" style="background:{{item.value}}"
+          wx:for="{{contentbgItem}}" data-contentbgvalue="{{item.value}}" catchtap="siteContentbg" wx:key="key">
+        </label>
+        <label class="content-bg  {{setItem.night == true?'bgday':'bgnight'}}" catchtap="siteNight">
+          {{setItem.night == true?'白天':'夜间'}}
+        </label>
+
+      </view>
+    </view>
+
+    <view class="content-setting-list">
+      <view class="content-setting-item fontset">
+        <text class="content-setting-text">字号</text>
+        <label class="fontbg {{setItem.night == true?'bgnight':'bgday'}}" bindtap="mimusContentSize">A-</label>
+        <label class="fontbg {{setItem.night == true?'bgnight':'bgday'}}" bindtap="addContentSize">A+</label>
+      </view>
+    </view>
+    <view class="content-setting-list">
+      <view class="content-setting-item spaceset">
+        <text>间距</text>
+        <label
+          class="spacebg {{setItem.night == true?'bgnight':'bgday'}} {{item.value==setItem.spacing?'item-check':''}}"
+          wx:for="{{spacingItem}}" data-spacingvalue="{{item.value}}" bindtap="siteSpacing" wx:key="key">
+          <image class="item-spacing" src="/image/spacing{{item.id}}.png"></image>
+        </label>
+      </view>
+    </view>
+    <view class="content-setting-list">
+      <view class="content-setting-item bottombtn">
+        <view catchtap="toIndex">
+          <image src="{{bookimg}}"></image>
+          <text class="{{setItem.night == true?'bgnight':'bgday'}}">书城</text>
+        </view>
+        <view catchtap="toDetail">
+          <image src="{{detailimg}}"></image>
+          <text class="{{setItem.night == true?'bgnight':'bgday'}}">详情</text>
+        </view>
+        <view catchtap="btnMark">
+          <image src="{{shelfimg}}"></image>
+          <text class="{{setItem.night == true?'bgnight':'bgday'}}">{{markcontent}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="prop" wx:if="{{continueTip}}">
+    <view class="prop-center">
+      <view class="title">任务提示</view>
+      <view class="tips">从{{fee_name}}活动返回，继续阅读</view>
+      <view class="btn-read" catchtap="toNext">继续阅读</view>
+    </view>
+  </view>
+</view>
+<view wx:else><canvas canvas-id="sector" class="sector" style="width:600rpx;height:600rpx"></canvas></view>

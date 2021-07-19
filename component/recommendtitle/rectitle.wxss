@@ -1,0 +1,36 @@
+.main {
+  width: 670rpx;
+  height: 33rpx;
+  margin-bottom: 40rpx;
+}
+.left-text {
+  display: inline-block;
+  /* width: 134rpx; */
+  height: 33rpx;
+  line-height: 33rpx;
+  font-size: 34rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: bold;
+  color: #454C56;
+}
+.more {
+  float: right;
+  height: 33rpx;
+}
+.more text {
+  display: inline-block;
+  height: 33rpx;
+  line-height: 33rpx;
+  font-size: 22rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #88919E;
+  margin-right: 10rpx;
+}
+.more image {
+  width: 16rpx;
+  height: 18rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0;
+}

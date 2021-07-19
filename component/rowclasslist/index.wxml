@@ -1,0 +1,7 @@
+<view class="class-content">
+  <view class="class-item" wx:for="{{classlist}}" data-classid="{{item.classId}}" data-classname="{{item.className}}"
+    style="background-color: {{item.bgColor}};" bindtap="toClassNovelList" wx:key="key">
+    <image wx:if="{{item.isNeedImg}}" src="{{item.imgPath}}"></image>
+    <text>{{item.className}}</text>
+  </view>
+</view>

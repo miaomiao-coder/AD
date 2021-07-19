@@ -1,0 +1,37 @@
+<view class="page" wx:if="{{!loading}}">
+  <view class="pagecount">
+    <view class="left">共{{totalcount}}章</view>
+    <view class="right" data-sort="{{sort=='asc'?'desc':'asc'}}" bindtap="bindSort">
+        <block wx:if="{{sort =='desc'}}">
+          <text class="text-asc">正序</text>
+          <image class="image" src="../../../../image/asc.png"></image>
+        </block>
+        <block wx:else="{{sort=='asc'}}">
+          <text class="text-desc">倒序</text>
+          <image class="image" src="../../../../image/desc.png"></image>
+        </block>
+    </view>
+  </view>
+  <scroll-view class="scroll" scroll-y="true" bindscrolltolower="AddMore" scroll-top="{{toTop==true?0:''}}">
+    <view class="items" data-cid="{{item.chapter_code}}" wx:for="{{titles}}" wx:key="key" bindtap="bindChapterText">
+      <view class="title {{item.chapter_code==chapterCode?'choosed':'nochoose'}}" hover-class="title-hover">{{item.chapter_name}}</view>
+      <view class="free hide" wx:if="{{item.isread=='yes' }}">
+        免费
+      </view>
+      <view class="lockvip" wx:else>
+        <image src="/image/lock.png" /> 
+      </view>
+    </view>
+    <view class="refresh-footer" wx:if="{{pageCount>0 && pageIndex < pageCount&&!showLoading}}"></view>
+    <view class="refresh-footer" wx:if="{{pageCount>0 && pageIndex < pageCount&&showLoading}}">
+      <image src="/image/loading.gif"></image>正在加载···
+    </view>
+  </scroll-view>
+  <navigator url="url" class="toTop" hover-class="toTop-hover" wx:if="{{totalcount > 15}}">
+    <image src="../../../../image/toTop.png" style="height:110rpx;width:110rpx;float:right;" catchtap="toTopEvent"></image>
+  </navigator>
+</view>
+<view wx:else>
+画布下雨特效
+<canvas canvas-id="myCanvas"></canvas>
+</view>

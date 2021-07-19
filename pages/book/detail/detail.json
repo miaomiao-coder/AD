@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "书籍详情",
+    "navigationBarBackgroundColor":"#F08219",
+    "navigationBarTextStyle": "white",
+    "usingComponents": { 
+        "ad-component": "../../../component/adcomponent/index"
+    }
+}

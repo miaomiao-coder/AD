@@ -1,0 +1,59 @@
+/* pages/morenovel/index.wxss */
+page{
+  background-color: #ffffff;
+  }
+.book-container {
+  position: fixed;
+  top: 0rpx;
+  bottom: 0;
+  width: 100%;
+  background: #ffffff;
+}
+
+.refresh-footer {
+  text-align: center;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: Center;
+  height:77rpx;
+}
+.nomore
+{
+  color: #949BAD;
+  font-size:26rpx;
+}
+.refresh-footer text{
+  line-height: 32rpx;
+  font-size: 26rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #949BAD;
+  margin-left:8rpx;
+}
+
+.refresh-footer image{
+  width:23rpx;
+  height:23rpx;
+}
+.nobook
+{
+  padding-top: 383rpx;
+  display: flex;
+  flex-direction: column;  
+  margin: 0 auto;
+}
+.nobook image
+{
+width:172rpx;
+height: 184rpx;
+}
+.nobook .nodata-desp
+{
+  margin-top:41rpx;
+  font-size: 26rpx;
+font-family: Noto Sans S Chinese;
+font-weight: 400;
+color: #C8C8C8;
+}

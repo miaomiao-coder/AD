@@ -1,0 +1,4 @@
+/* pages/canvasdemo/graphics/index.wxss */
+page{
+  /* margin-top: 178rpx; */
+}

@@ -1,0 +1,99 @@
+<!--pages/bookmark/bookmark.wxml-->
+
+<view class="page" wx:if="{{!loading}}">
+  <view class="header">
+    <view class="search-column"  bindtap="{{bookmarkEditMode==1?'':'bindChangeShowType'}}" data-showtype="0">
+      <text class="tab-bar {{showType==0?'active':''}}" >阅读记录</text>
+      <image class="bottomline" wx:if="{{showType==0}}" src="../../image/tab-select.png"></image>
+    </view>
+    <view class="search-column"  bindtap="bindChangeShowType" data-showtype="1">
+      <text class="tab-bar {{showType==1?'active':''}}">书架</text>
+      <image class="bottomline" wx:if="{{showType==1}}" src="../../image/tab-select.png"></image>
+    </view>
+  </view>
+  <!-- 阅读记录内容 -->
+  <view wx:if="{{showType==0}}" class="maincontent">
+    <view wx:if="{{readList.length==0}}" class="noReadHistoryText">无阅读记录</view>
+    <view class="tab-list-list tab-list-list-flex-item" style="margin: 0 auto;">
+      <view wx:for="{{readList}}" wx:key="key" class="tab-list-list-item-2 flex-wrp" data-nid="{{item.novelid}}" data-code="{{item.chapter_code}}"
+                catchtap="readEvent">
+        <view class="tab-list-list-item-item1-2">
+          <image class="tab-list-list-item-image-2"
+            src="{{item.thumb_cover==''?'/image/defaultcover.png':item.thumb_cover}}"></image>
+        </view>
+        <view class="tab-list-list-item-item2-2">
+          <view class="tab-list-list-item-text-2 text1">{{item.title==''?item.title:item.title}}</view>
+          <view class="tab-list-list-item-text-2 text2">{{item.chapter_name}}</view>
+          <view class="content-bottom">
+            <view class="words-state">{{item.lastreadtime}}</view>
+            <view class=" textcenter">
+              <view class="list-action-btn" >继续阅读</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="bottertitle">
+      <text class="title">猜你想继续阅读</text>
+    </view>
+
+    <view class="tab-list-list tab-list-list-flex-item" style="margin: 0 auto;margin-bottom:110rpx">
+      <view wx:for="{{guessLikeList}}" wx:key="key" class="tab-list-list-item-2 flex-wrp" data-nid="{{item.novelid}}" data-code="{{item.chapter_code}}"
+                catchtap="readEvent">
+        <view class="tab-list-list-item-item1-2">
+          <image class="tab-list-list-item-image-2"
+            src="{{item.thumb_cover==''?'/image/defaultcover.png':item.thumb_cover}}"></image>
+        </view>
+        <view class="tab-list-list-item-item2-2">
+          <view class="tab-list-list-item-text-2 text1">{{item.title}}</view>
+          <view class="tab-list-list-item-text-2 text2">{{item.classname}}</view>
+          <view class="content-bottom">
+            <view class="words-state">{{item.lastreadtime}}</view>
+            <view class=" textcenter">
+              <view class="list-action-btn" >继续阅读</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 书架内容 -->
+  <scroll-view wx:if="{{showType==1}}" class="scrollview {{bookmarkEditMode==1?'scroll-bottom':''}}" scroll-y="true"
+    scroll-x="{{false}}" bindscrolltolower="AddMore">
+    <!--收藏书架-->
+    <view class="colbooklist threelist" >
+      <view id="{{idx}}" class="novel-item" wx:for="{{booklist}}" wx:key="key" wx:for-index="idx" scroll-x="{{false}}">
+        <view class="listItem" id="{{idx}}" data-cid="{{listtype=='recommend'?0:item.chaptercode}}"
+          data-bid="{{item.novelid}}" bindlongpress="bindSelectNovel" bindtap="{{bookmarkEditMode==1?'bindSelectNovel':'bindNovelDetail'}}">
+          <image class="bookimg" src="{{item.thumb_cover==''?'/image/defaultcover.png':item.thumb_cover}}"></image>
+          <view class="title">{{item.title}}</view>
+          <view class="recent">更新至{{item.recentchaptercode}}章</view>
+          <view class="listItemMask" wx:if="{{item.delstatus==1}}">
+            <image class="checkedimg" src="/image/bookmark-selected.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="listItem " style="border:1 rpx dashed; margin-top:40rpx;margin-left:20rpx" bindtap="bindImageToIndex"
+        wx:if="{{bookmarkEditMode!=1}}">
+        <image class="bookimg" src="/image/plus.png"></image>
+      </view>
+    </view>
+    <view class="refresh-footer" wx:if="{{isaddmore==true}}">
+      <!-- <image src="/image/loading.gif"></image>正在加载...-->
+    </view>
+  </scroll-view>
+
+  <view class="bookmark-edit-container" wx:if="{{bookmarkEditMode==1}}">
+    <button class="bookmark-edit-btn-gray" wx:if="{{bookmarkEditSelectNo==1}}"
+      bindtap="bindExitEditBookMark">返回</button>
+    <button class="bookmark-edit-btn-orange" wx:if="{{bookmarkEditSelectAny!=0}}"
+      bindtap="bindDeleleSelectedBookMark">删除</button>
+    <button class="bookmark-edit-btn-orange" wx:if="{{bookmarkEditSelectLessThanAll==1}}"
+      bindtap="bindSelectAllBookMark">全选</button>
+    <button class="bookmark-edit-btn-orange" wx:if="{{bookmarkEditSelectAll==1}}"
+      bindtap="bindCancelSelectAllBookMark">取消</button>
+  </view>
+
+  <tab-component selected="0"></tab-component>
+</view>

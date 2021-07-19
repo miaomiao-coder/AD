@@ -1,0 +1,8 @@
+<!--pages/canvasdemo/graphics/index.wxml-->
+<!-- <banner-component name="返回"></banner-component> -->
+<pay-component></pay-component>
+<canvas canvas-id="rectangle" class="rectangle"></canvas>
+<canvas canvas-id="radiorectangle" class="rectangle"></canvas>
+<canvas canvas-id="circle" class="circle"></canvas>
+<canvas canvas-id="triangle" class="triangle"></canvas>
+

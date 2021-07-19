@@ -1,0 +1,4 @@
+/* pages/canvasdemo/stars/index.wxss */
+page{
+background: #000000;
+}

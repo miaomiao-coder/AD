@@ -1,0 +1,8 @@
+<!--pages/canvasdemo/zan/index.wxml-->
+<!-- <banner-component name="返回"></banner-component> -->
+<pay-component></pay-component>
+  <canvas canvas-id="bezier" style="width:{{width}}rpx;height:{{height}}rpx" class="like-fx"></canvas>
+  <view class="love-new {{heartclass}}" bindtap="vibrateShortTap">
+    <view class="">❤</view>
+    <!-- 这个爱心自己换上字体或者图片爱心 -->
+  </view>

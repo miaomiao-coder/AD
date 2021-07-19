@@ -1,0 +1,5 @@
+{
+  "usingComponents": { "book-component": "../../component/rowbooklist/index"},
+  "navigationBarBackgroundColor":"#F08219",
+  "navigationBarTextStyle": "white"
+}

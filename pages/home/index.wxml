@@ -1,0 +1,95 @@
+
+<view class="main" wx:if="{{!allloading}}">
+  <!-- 顶部男女生tab和搜索框 -->
+  <view class="top-view">
+    <view class="top-view-left">
+      <text class="{{femaleClass}}" bindtap="selFemale">女生</text>
+      <text class="{{maleClass}}" bindtap="selMale">男生</text>
+      <image class="{{tabImgClass}}" src="../../image/tab-select.png"></image>
+    </view>
+    <view class="top-view-right" bindtap="toSearchPage">
+      <image src="../../image/selecticon.png"></image>
+      <!-- <input type="text"  placeholder="搜索书名" /> -->
+      <view class="search-input">搜索书名</view>
+    </view>
+  </view>
+  <scroll-view scroll-y="{{true}}" data-skeleton-hide="hideBanner" hidden="{{!hideBanner}}"  class="scrollList" bindscrolltolower="scrollPaging" scroll-top="{{scrollTop}}"
+    style="{{sexType==1?(female_bannerList.length>0?'':'padding-top: 10rpx;'):(male_bannerList.length>0?'':'padding-top: 10rpx;')}}">
+    <!-- banner轮播图 -->
+    <view class="index-cover" wx:if="{{sexType==1?female_bannerList.length>0:male_bannerList.length>0}}">
+      <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="3000" duration="1000" class="swiper-content">
+        <block wx:for="{{sexType==1?female_bannerList:male_bannerList}}" wx:key="key">
+          <swiper-item data-id="{{item.func_id}}" bindtap="toDetail" class="swiper-content">
+            <image src="{{item.ad_cover}}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- 今日热书 -->
+    <view class="hot-novel" wx:if="{{sexType==1?female_todayHotBook.length>0:male_todayHotBook.length>0}}">
+      <rec-title title="{{sexType==1?female_todayHotBook[0].rec_classname:male_todayHotBook[0].rec_classname}}" moreTitle="更多" moreImgPath="../../image/right_arrow.png"
+        rectype="{{sexType==1?female_todayHotClassId:male_todayHotClassId}}" bindmoretap="tapTodayHotMore"></rec-title>
+      <book-row booklist="{{sexType==1?female_todayHotRowBook:male_todayHotRowBook}}" recommend="{{true}}"></book-row>
+      <view style="height: 40rpx"></view>
+      <book-col colbooklist="{{sexType==1?female_todayHotColBook:male_todayHotColBook}}" hasfouritem="{{true}}"></book-col>
+    </view>
+    <!-- 热门分类 -->
+    <view class="hot-class" wx:if="{{sexType==1?female_hotClass.length>0:male_hotClass.length>0}}">
+      <rec-title title="热门分类" moreTitle="更多分类" moreImgPath="../../image/right_arrow.png"
+        rectype="{{sexType==1?female_hotClassId:male_hotClassId}}" bindmoretap="tapHotClass"></rec-title>
+      <class-row classlist="{{sexType==1?female_hotClass:male_hotClass}}"></class-row>
+    </view>
+    <!-- 重磅新书 -->
+    <view class="new-book" wx:if="{{sexType==1?female_newBookList.length>0:male_newBookList.length>0}}">
+      <rec-title title="{{sexType==1?female_newBookList[0].rec_classname:male_newBookList[0].rec_classname}}" moreTitle="更多" moreImgPath="../../image/right_arrow.png"
+        rectype="{{sexType==1?female_newClassId:male_newClassId}}" bindmoretap="tapNew"></rec-title>
+      <book-col colbooklist="{{sexType==1?female_newBookList:male_newBookList}}"></book-col>
+    </view>
+    <!-- 热门推荐 -->
+    <view class="hot-recommend" wx:if="{{sexType==1?female_hotRecBookList.length>0:male_hotRecBookList.length>0}}">
+      <rec-title title="{{sexType==1?female_hotRecBookList[0].rec_classname:male_hotRecBookList[0].rec_classname}}" moreTitle="换一换" moreImgPath="../../image/replace.png"
+        rectype="{{sexType==1?female_hotRecClassId:male_hotRecClassId}}" bindmoretap="tapHotRecommend"></rec-title>
+      <book-row booklist="{{sexType==1?female_hotRecBookList:male_hotRecBookList}}" recommend="{{true}}"></book-row>
+    </view>
+    <!-- 口碑佳作 -->
+    <view class="good-novel" wx:if="{{sexType==1?female_goodBookList.length>0:male_goodBookList.length>0}}">
+      <rec-title title="{{sexType==1?female_goodBookList[0].rec_classname:male_goodBookList[0].rec_classname}}" moreTitle="更多" moreImgPath="../../image/right_arrow.png"
+        rectype="{{sexType==1?female_goodClassId:male_goodClassId}}" bindmoretap="tapGood"></rec-title>
+      <book-col colbooklist="{{sexType==1?female_goodBookList:male_goodBookList}}"
+        hasfouritem="{{sexType==1?female_goodBookList.length>=4:male_goodBookList.length>=4}}"></book-col>
+    </view>
+    <!-- 经典热书 -->
+    <view class="classics-hot-novel"
+      wx:if="{{sexType==1?female_classicsHotBookList.length>0:male_classicsHotBookList.length>0}}">
+      <rec-title title="{{sexType==1?female_classicsHotBookList[0].rec_classname:male_classicsHotBookList[0].rec_classname}}" moreTitle="更多" moreImgPath="../../image/right_arrow.png"
+        rectype="{{sexType==1?female_classicsHotClassId:male_classicsHotClassId}}" bindmoretap="tapHotClassics">
+      </rec-title>
+      <book-col colbooklist="{{sexType==1?female_classicsHotBookList:male_classicsHotBookList}}"></book-col>
+    </view>
+    <!-- 必看言情&必看都市 -->
+    <view class="romantic-novel" wx:if="{{sexType==1?female_romanticBookList.length>0:male_cityBookList.length>0}}">
+      <rec-title title="{{sexType==1?female_romanticBookList[0].rec_classname:male_cityBookList[0].rec_classname}}" moreTitle="换一换" moreImgPath="../../image/replace.png"
+        rectype="{{sexType==1?female_romanticClassId:male_cityClassId}}" bindmoretap="tapRomanticOrCity"></rec-title>
+      <book-row booklist="{{sexType==1?female_romanticBookList:male_cityBookList}}" recommend="{{true}}"></book-row>
+    </view>
+    <!-- 猜你喜欢 -->
+    <view class="maylike-novel" wx:if="{{sexType==1?female_mayLikeBookList.length>0:male_mayLikeBookList.length>0}}">
+      <rec-title title="猜你喜欢" moreTitle="" moreImgPath=""></rec-title>
+      <book-row booklist="{{sexType==1?female_mayLikeBookList:male_mayLikeBookList}}" recommend="{{false}}"></book-row>
+    </view>
+    <view class="loading" wx:if="{{showLoading}}">
+      <image src="../../image/loading.gif"></image>
+      <text>正在加载</text>
+    </view>
+  </scroll-view>
+
+  <!-- <view class="adContainer">
+    <ad-component adunitid='{{showAdList[0]}}'></ad-component>
+  </view> -->
+</view>
+<view wx:else class="content">
+
+  <view class="desc">简易学习吧内容丰富</view>
+  <view class="desc">主要包含画布特效的展示以及特殊效果的展示</view>
+</view>
+<tab-component wx:if="{{!allloading}}" selected="1"></tab-component>

@@ -1,0 +1,430 @@
+/* pages/book/detail/detail.wxss */
+page{
+background-color: #ffffff;
+}
+.page {
+  overflow-x: hidden;
+}
+
+.bg {
+  position: relative;
+  top: -300rpx;
+  left: -300rpx;
+  width: 0rpx;
+  height: 0rpx;
+  z-index: 1;
+}
+
+.bg image {
+  width: 1350rpx;
+  height: 700rpx;
+  filter: blur(20rpx);
+  -webkit-filter: blur(20rpx);
+  -moz-filter: blur(20rpx);
+  -ms-filter: blur(20rpx);
+  -o-filter: blur(20rpx);
+}
+
+.bgopacity {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 750rpx;
+  height: 300rpx;
+  z-index: 2;
+  background: #000;
+  opacity: 0.15;
+}
+
+.content {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 750rpx;
+  height: auto;
+  z-index: 4;
+  bottom: 0;
+}
+.gaosi
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  filter: blur(10rpx);
+  z-index:-1rpx;
+}
+
+.bookinfo {
+  height: 380rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10rpx;
+  background: linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  position:relative;
+}
+
+.left image {
+  margin-left: 40rpx;
+  margin-top: 40rpx;
+  height: 320rpx;
+  width: 248rpx;
+  border-radius: 10rpx;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 49rpx;
+  position: relative;
+  width:350rpx;
+}
+
+.title {
+  margin-top: 71rpx;
+  font-size: 43rpx;
+  line-height: 56rpx;
+  font-size: 36rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: bold;
+  color: #454C56;
+  lines: 2
+}
+
+.author {
+  margin-top: 30rpx;
+}
+
+.author label {
+  display: flex;
+  flex-direction: column;
+  font-size: 28rpx;
+  line-height: 46rpx;
+}
+
+.wordsize {
+  display: flex;
+  flex-direction: row;
+  font-size: 24rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #85909A;
+  line-height: 60rpx;
+  margin-top: 22rpx;
+}
+
+.wordsize .line {
+  color: #fff;
+  opacity: 0.2;
+  margin: 0 20rpx 2rpx;
+}
+
+.content-bottom {
+  background: white;
+  padding-bottom: 200rpx;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+}
+
+.button button {
+  margin-top: 40rpx;
+  background: #ff5c4d;
+  height: 71rpx;
+  line-height: 71rpx;
+  width: 311rpx;
+  font-size: 34rpx;
+  margin-left: 30rpx;
+}
+
+.button .read {
+  background: #ff5c4d;
+}
+
+.button .mark {
+  background: white;
+  border: 2rpx solid #ff5c4d;
+  color: #ff5c4d;
+  margin-right: 30rpx;
+}
+
+.Desc {
+  text-indent: 1.5rem;
+  letter-spacing: 2rpx;
+  text-align: justify;
+  padding: 40rpx 40rpx;
+
+  font-size: 30rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #454C56;
+  line-height: 60rpx;
+}
+
+.desp-title {
+  font-size: 36rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: bold;
+  color: #454C56;
+  line-height: 60rpx;
+  margin: 50rpx 0 0 40rpx;
+}
+
+.lastupdate {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #888;
+  line-height: 36rpx;
+  margin-left: 30rpx;
+}
+
+.lastupdate .lastcontent {
+  display: flex;
+  flex-direction: row;
+}
+
+.lastupdate .lastcontent .lasttext {
+  width: 30%;
+}
+
+.lastupdate .lastcontent .lasttime {
+  display: inline-block;
+  width: 70%;
+  margin-right: 30rpx;
+  text-align: right;
+}
+
+.lastupdate .lasttitle {
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  line-height: 36rpx;
+  color: #353535;
+  font-weight: 600;
+}
+
+.chapter {
+  text-align: center;
+  margin: 60rpx 30rpx 40rpx 30rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #f2f2f2;
+  font-size: 34rpx;
+  color: #353535;
+  border-radius: 8rpx;
+}
+
+.adclass {
+  /* text-align: center; */
+  padding-top: 30rpx;
+}
+
+.line-border {
+  background: #ebebeb;
+  height: 20rpx;
+  width: 100%;
+}
+
+.novel-recommend {
+  display: flex;
+  flex-direction: column;
+  height: 450rpx;
+}
+
+.novel-recommend-title {
+  font-size: 34rpx;
+  margin: 40rpx 0;
+  padding-left: 28rpx;
+  border-left: 7rpx solid #ff5c4d;
+}
+
+.novel-recommend-content {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 40rpx;
+}
+
+.novel-recommend-item {
+  width: 180rpx;
+  height: 240rpx;
+}
+
+.tab-list-list-item-1-image {
+  display: inline;
+}
+
+.tab-list-list-item-1-text {
+  font-size: 28rpx;
+  width: 170rpx;
+  height: 70rpx;
+  text-align: center;
+  margin-top: 15rpx;
+  color: #353535;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.empty {
+  height: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.footer {
+  width: 100%;
+  height: 150rpx;
+  position: fixed;
+  background: white;
+  bottom: 0;
+  z-index: 10;
+  border-top: 1rpx solid#e9e9e9;
+}
+
+.footer .first {
+  float: left;
+  width: 30%;
+  height: 100%;
+  font-size: 22rpx;
+  font-family: SourceHanSansCN-Normal;
+  font-weight: 400;
+  color: rgba(255, 92, 77, 1);
+  line-height: 36rpx;
+  padding-top: 35rpx;
+}
+
+.footer .second {
+  float: left;
+  width: 355rpx;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  /* padding-top:51rpx; */
+  display: flex;
+}
+
+.startread {
+  width: 300rpx;
+  height: 90rpx;
+  background: #FE8503;
+  border-radius: 45rpx;
+  font-size: 36rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: bold;
+  color: #FFFFFF;
+  line-height: 90rpx;
+}
+
+.footer .third {
+  float: right;
+  width: 341rpx;
+  height: 100%;
+  font-size: 22rpx;
+  font-family: SourceHanSansCN-Normal;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 36rpx;
+  /* padding-top:35rpx; */
+  display: flex;
+}
+
+.first image {
+  width: 46rpx;
+  height: 42rpx;
+}
+
+.second image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.second text {
+  line-height: 40rpx;
+  font-size: 26rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  margin-left: 10rpx;
+}
+
+.third image {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.center {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.footer-border {
+  width: 264rpx;
+  height: 70rpx;
+  border: 2rpx solid #f3ae21;
+  border-radius: 10rpx;
+}
+
+.footer-borderfull {
+  width: 366rpx;
+  height: 70rpx;
+  background: #f3ae21;
+  border-radius: 10rpx;
+}
+
+.backgroundred {
+  background: #ff5c4d;
+}
+
+.backgroundwhite {
+  background: #fff;
+}
+
+.backgroundgray {
+  background: #999;
+}
+
+.colorgray {
+  color: #999;
+}
+
+.colorred {
+  color: #FE8503;
+}
+
+.tablecenter {
+  justify-content: center;
+  align-items: Center;
+
+}
+
+.tags-content {
+  margin-top: 39rpx;
+  width: 380rpx;
+}
+
+.tag-item {
+  background-color: #FFFFFF;
+  border: 1rpx solid #E1E1E1;
+  border-radius: 24rpx;
+  display: inline-block;
+  padding: 3rpx 22rpx;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+  color: #888;
+  font-size: 24rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  height: 49rpx;
+  line-height: 43rpx;
+  overflow: hidden;
+}

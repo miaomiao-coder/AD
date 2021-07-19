@@ -1,0 +1,51 @@
+/* component/tabBar/bottom-component.wxss */
+.tab-bar {
+  width: 750rpx;
+  height: 110rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  z-index: 50;
+  background: #FFFFFF;
+  opacity: 0.98;
+}
+.tab-bar-border
+{
+  background-color: #E1E1E1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2rpx;
+  transform: scaleY(0.5);
+}
+
+.tab-bar-item {
+  flex-grow: 1;
+  flex-direction: column;
+  /* justify-content: center;  */  /* 垂直居中 */
+  align-items: center;
+  height: 110rpx;
+  display: flex;
+}
+.tab-bar-item .title {
+  /* width:88rpx; */
+  height: 55rpx;
+  font-size: 30rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  line-height: 36rpx;
+  margin-top: 45rpx;
+  text-align: center;
+}
+.nochoose
+{
+  color: #999999;
+}
+
+.choose{
+  color: #FF7830;
+  /* border-bottom: solid 6rpx #FF7830; */
+}

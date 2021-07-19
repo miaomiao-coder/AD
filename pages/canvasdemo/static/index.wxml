@@ -1,0 +1,2 @@
+<!--pages/canvasdemo/static/index.wxml-->
+<canvas canvas-id="sector" class="sector" style="width:600rpx;height:600rpx"></canvas>

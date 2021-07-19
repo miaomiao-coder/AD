@@ -1,0 +1,6 @@
+/* component/adcomponent/index.wxss */
+.adContainer
+{
+  /* width:90%;
+  margin-left:40rpx; */
+}

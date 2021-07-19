@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": { 
+        "ad-component": "../../../../component/adcomponent/index"
+    }
+}

@@ -1,0 +1,16 @@
+/* pages/contact/index.wxss */
+.task {
+  margin: 20rpx 20rpx 20rpx 20rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: bold;
+  color: #85909A;
+}
+.center {
+  width: 670rpx;
+  margin-left: 40rpx;
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin-top:40rpx;
+}

@@ -1,0 +1,21 @@
+<!--pages/lotteryLog/index.wxml-->
+<!-- <view class="banner">
+  <view class="back" catchtap="toBack">
+    <image src="/image/prev-icon.png"></image>
+    <view class="title">领取记录</view>
+  </view>
+</view> -->
+<!-- <banner-component name="领取记录"></banner-component> -->
+<scroll-view scroll-y="true" class="book-container" bindscrolltolower="scrolltolowerEvent" wx:if="{{logList.length>0}}"
+  scroll-top="{{toTop==true?0:''}}">
+  <!-- <ad-component adunitid='{{unitid}}'></ad-component> -->
+  <view class="item-content" wx:for="{{logList}}" wx:key="key" >
+    <view class="left">
+      <view class="title">{{item.prizename}}</view>
+      <view class="time">{{item.exchangetime}}</view>
+    </view>
+    <view class="state">已发放</view>
+  </view>
+  <view style="padding-bottom:20rpx;"></view>
+
+</scroll-view>

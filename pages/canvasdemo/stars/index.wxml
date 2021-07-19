@@ -1,0 +1,4 @@
+<!--pages/canvasdemo/stars/index.wxml-->
+<view class="page">
+  <canvas canvas-id="myCanvas" style="width:{{width}}px;height:{{height}}px"></canvas>
+</view>

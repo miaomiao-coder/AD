@@ -1,0 +1,158 @@
+.page {
+  font-size: 28rpx;
+  color: #353535;
+  text-indent: 1rem;
+  background-color: #ffffff;
+}
+
+.pagecount {
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  position: fixed;
+  left: 0;
+  height: 98rpx;
+  line-height: 98rpx;
+  color: #888;
+  width: 750rpx;
+  border-bottom: 1rpx solid #ededed;
+}
+
+.pagecount .left {
+  width: 600rpx;
+  font-size: 30rpx;
+font-family: Noto Sans S Chinese;
+font-weight: 400;
+color: #85909A;
+}
+
+.pagecount .right {
+  display: flex;
+  flex-direction: row;
+  width: 16%;
+  justify-content: center;
+  align-items: center;
+}
+.right text{
+  font-size: 26rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  line-height: 25rpx;
+}
+.text-desc
+{
+  color: #85909A;
+}
+.text-asc
+{
+color: #FE8503;
+}
+
+.right .image {
+  width: 14rpx;
+  height: 25rpx;
+  margin-left:8rpx;
+}
+
+.scroll {
+  position: fixed;
+  top: 98rpx;
+  bottom: 0;
+  background: white;
+}
+
+.scroll .items {
+  display: flex;
+  flex-direction: row;
+  height: 99rpx;
+  line-height: 99rpx;
+  border-bottom: 1rpx solid #ededed;
+}
+
+.scroll .items .title {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+}
+.choosed
+{
+color: #FE8503;
+}
+.nochoose
+{
+  color: #454C56;
+}
+
+.scroll .items .free {
+  width: 20%;
+  text-align: right;
+  margin-right: 35rpx;
+  color: #b3b3b3;
+  font-size: 26rpx;
+}
+
+.scroll .items .free image {
+  height: 60rpx;
+  width: 61rpx;
+}
+.lockvip
+{
+  width: 20%;
+  text-align: right;
+  margin-right: 35rpx;
+}
+.lockvip image{
+width:25rpx;
+height: 30rpx;
+}
+
+.title-hover {
+  color: #ff5c4d;
+  border-left: 4rpx solid #ff5c4d;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  line-height: 51rpx;
+}
+
+.refresh-footer {
+  text-align: center;
+  font-size: 26rpx;
+  line-height: 30rpx;
+  position: relative;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+
+.refresh-footer image{
+  position: absolute;
+  width:30rpx;
+  height:30rpx;
+  top:0;
+  left:50%;
+  margin-left: -95rpx;
+}
+
+.toTop {
+  position: fixed;
+  bottom: 120rpx;
+  float: right;
+  right: 40rpx;
+  z-index: 99;
+  width: 110rpx;
+  background: #fff;
+  border-radius: 55rpx;
+  opacity: 0.6;
+}
+
+.toTop-hover {
+  opacity: 0.8;
+}
+.hide
+{
+  display:none;
+}

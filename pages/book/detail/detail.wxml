@@ -1,0 +1,50 @@
+<view class="page" wx:if="{{!loading}}">
+  <view class="main" >
+    <!--小说图片标题-->
+    <view class="content" scroll-y="false">
+      <view class="bookinfo">
+      <!-- <image class="gaosi" src="{{bookinfo.small_cover==''?'/image/defaultcover.png':bookinfo.small_cover}}"></image> -->
+      <view class="left">
+        <image src="{{bookinfo.small_cover==''?'/image/defaultcover.png':bookinfo.small_cover}}" mode="scaleToFill">
+        </image>
+      </view>
+        <view class="right">
+          <label class="title">{{bookinfo.title}}</label>
+          <!-- <view>{{bookinfo.author}}</view> -->
+          <view class="wordsize">
+            <label> {{bookinfo.classname}}· {{bookinfo.updatestatus}} · {{bookinfo.shortwordsize}} </label>
+          </view>
+          <view wx:if="{{tagList.length>0}}" wx:key="key" class="tags-content" wx:key="{{key}}">
+            <view wx:for="{{tagList}}" class="tag-item" wx:key="key">{{item}}</view>
+          </view>
+
+        </view>
+      </view>
+      <!-- <ad-component adunitid='{{unitid}}'></ad-component> -->
+      <view class="content-bottom">
+        <!--阅读按钮-->
+    
+        <!--小说简介-->
+        <view class="desp-title">简介</view>
+        <view class="Desc">
+          {{bookinfo.longdesc}}
+        </view>
+    
+      
+    </view>
+    </view>
+  </view>
+
+  <view class='footer'>
+    <view class="second center tablecenter" bindtap="btnMark" disabled="{{markdisabled}}">
+      <image src="{{markimg}}"></image>
+      <text class="{{markcolorclass}}">{{markcontent}}</text>
+    </view>
+    <view class="third center tablecenter" bindtap="btnRead">
+      <view class="startread">立即阅读</view>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <canvas style="width: 300px; height: 200px;" canvas-id="canvasid"></canvas>
+</view>

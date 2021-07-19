@@ -1,0 +1,4 @@
+<!--pages/canvasdemo/playbill/index.wxml-->
+<!-- <banner-component name="返回"></banner-component> -->
+<pay-component></pay-component>
+<canvas canvas-id="myCanvas"></canvas>

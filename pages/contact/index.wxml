@@ -1,0 +1,15 @@
+<!--pages/contact/index.wxml-->
+
+<official-account></official-account>
+<view class="center">
+  <view class="task">
+    <contact-button type="default-light" size="20" session-from="weapp">进入客服
+    </contact-button>
+  </view>
+  <view class="task" style="padding-left:40rpx;" data-url="{{url}}" bindtap="routeToPage">
+     {{name}}
+  </view>
+  <view class="task" style="padding-left:40rpx;" data-url="../classnovel/index?clear=1" bindtap="routeToPage">
+     {{classname}}
+  </view>
+</view>
